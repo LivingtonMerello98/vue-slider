@@ -16,7 +16,8 @@
     <!-- Un contenitore per tutto il contenuto della pagina -->
     <div class="container">
          <!-- Wrapper del slider con tabindex per la navigazione da tastiera -->
-        <div class="slider-wrapper">
+         <!-- aggiunta di @mouseenter e @mouseleave associate alle funzioni startAutoplay() e stopAutoplay() -->
+        <div class="slider-wrapper" @mouseenter="stopAutoplay" @mouseleave="startAutoplay">
             <!-- Singola diapositiva del slider -->
             <div class="item">
                 <!-- Immagine della diapositiva corrente con attributi dinamici -->
