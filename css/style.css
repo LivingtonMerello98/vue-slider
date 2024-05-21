@@ -2,7 +2,13 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
 }
+
+.background{
+    background-color: #151515;
+}
+
 
 .container {
     height: 100vh;
