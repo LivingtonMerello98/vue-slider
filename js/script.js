@@ -22,9 +22,8 @@ const slides = [
     }
 ];
 
-// Eseguo la destructuring dell'oggetto Vue per estrarre la funzione createApp
 const { createApp } = Vue;
-
+// Eseguo la destructuring dell'oggetto Vue per estrarre la funzione createApp
 createApp({
     // Definisco i dati della mia applicazione
     data() {
@@ -37,14 +36,17 @@ createApp({
     },
     // Definisco i metodi che userò nell'applicazione
     methods: {
-        // Definisco un metodo per visualizzare la prossima diapositiva
+        // Al clic su una thumb, visualizza l'immagine corrispondente
+        showImage(index) {
+            this.currentIndex = index;
+        },
+         // Definisco un metodo per visualizzare la prossima diapositiva
         nextSlide() {
-            // Incremento l'indice corrente e assicuro che rimanga nell'intervallo delle diapositive
-
+             // Incremento l'indice corrente e assicuro che rimanga nell'intervallo delle diapositive
             //l'operatore modulo ci permette di creare un loop tra le diapositive, facendo tornare l'indice al primo elemento dopo aver raggiunto l'ultimo elemento.
             this.currentIndex = (this.currentIndex + 1) % this.slide.length;
         },
-        // Definisco un metodo per visualizzare la diapositiva precedente
+        // Definisci un metodo per visualizzare la diapositiva precedente
         prevSlide() {
             // Decremento l'indice corrente e assicuro che rimanga nell'intervallo delle diapositive
             this.currentIndex = (this.currentIndex - 1 + this.slide.length) % this.slide.length;
@@ -52,4 +54,3 @@ createApp({
     }
 })
 .mount('#app');
-
