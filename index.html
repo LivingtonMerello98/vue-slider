@@ -16,18 +16,15 @@
         <div class="container">
             <div class="slider-wrapper" tabindex="0">
 
-                <div class="item">
+                <div class="item"v-for="(slide, index) in slide" :key="index">
                     <h1>{{ title }}</h1>
-                    <img src="img/01.webp" alt="Spiderman" />
+                    <img :src="slide.image" :alt="slide.title">
                     <div class="text">
-                        <h3>Spiderman</h3>
-                        <p>
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit
-                            tempore aliquid deleniti aut
-                            veniam inventore eligendi ex ad ullam, cumque provident totam omnis, magnam dolores dolorum
-                            corporis.
-                        </p>
+                        <h3>{{ slide.title }}</h3>
+                        <p>{{ slide.text }}</p>
                     </div>
+                    <div class="prev"></div>
+                    <div class="next"></div>
                 </div>
 
                 <!-- <div class="thumbs">

@@ -71,6 +71,9 @@
 .next {
     bottom: 0;
 }
+.prev {
+    top: 0;
+}
 
 /*
 EXTRA: in questo esempio gli accordion vengono creati
