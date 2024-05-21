@@ -50,7 +50,26 @@ createApp({
         prevSlide() {
             // Decremento l'indice corrente e assicuro che rimanga nell'intervallo delle diapositive
             this.currentIndex = (this.currentIndex - 1 + this.slide.length) % this.slide.length;
+        },
+
+        startAutoplay() {
+            this.autoplayInterval = setInterval(this.nextSlide, 3000); // Cambio diapositiva ogni 3 secondi
+        },
+        stopAutoplay() {
+            clearInterval(this.autoplayInterval); // Interrompo l'autoplay
+        },
+        resetAutoplay() {
+            this.stopAutoplay();
+            this.startAutoplay();
         }
+
+    },
+    //stati dell applicativo
+    mounted() {
+        this.startAutoplay(); // Avvio l'autoplay quando l'app viene montata
+    },
+    beforeUnmount() {
+        this.stopAutoplay(); // Interrompo l'autoplay quando l'app viene smontata
     }
 })
 .mount('#app');
